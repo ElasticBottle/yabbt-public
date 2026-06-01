@@ -56,6 +56,7 @@ export function snapshot(
       yield* backend.putFile({
         localPath: latestPath,
         backupPath: latestKey,
+        storeChecksum: true,
       })
       yield* Effect.logInfo("snapshot.update_latest.complete");
       yield* Effect.logInfo("snapshot.complete");
